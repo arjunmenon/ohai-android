@@ -65,9 +65,10 @@
     <setup />
 
     <target name="compile" depends="-resource-src, -aidl"
-            description="Compiles project's .duby files into .class files">
-      <exec executable="dubyc" dir="src">
-        <env key="CLASSPATH" file="${sdk.dir}/platforms/${target-version}/android.jar" />
+            description="Compiles project's .mirah files into .class files">
+      <exec executable="mirahc" dir="src">
+        <arg value="-c" />
+        <arg value="${sdk.dir}/platforms/${target}/android.jar" />
         <arg value="-d" />
         <arg value="../bin/classes/" />
         <arg value="." />
